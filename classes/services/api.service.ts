@@ -1,19 +1,20 @@
-import { API_URL } from './../../constants/environments';
-import * as request from "request-promise-native";
+import { RequestService } from './request.service';
+import * as request from 'request-promise-native';
 
 export class ApiService {
     private API_KEY: string;
+    private req: RequestService;
     constructor(apiKey: string) {
         this.API_KEY = apiKey;
+        this.req = new RequestService();
     }
-
-    async getCurrentWeatherInLondon() {
-        const baseUrl = API_URL;
-        const queryString = `weather?q=London,uk&appid=${ this.API_KEY }`;
-        var options = {
-            uri: baseUrl + queryString,
-        };
-        return await request.get(options);
+    getCurrentWeatherInLondon() {
+        // Si queremos mapear 
+        /*return request.get(options).then( value => {
+                return value['coord']
+            }
+        );*/
+        return request.get(this.req.getQuery(`weather?q=London,uk&appid=${ this.API_KEY }`));
     }
 
 }
