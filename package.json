@@ -1,0 +1,33 @@
+{
+  "name": "openweather-api",
+  "version": "1.0.0",
+  "description": "Openweather Api Project in Node Typescript",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm-js-ts-angular-modules-course/training-node-ts-openweather-api.git"
+  },
+  "keywords": [
+    "openweather",
+    "api"
+  ],
+  "author": "Anartz Mugika Ledo <mugan86@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/npm-js-ts-angular-modules-course/training-node-ts-openweather-api/issues"
+  },
+  "homepage": "https://github.com/npm-js-ts-angular-modules-course/training-node-ts-openweather-api#readme",
+  "dependencies": {
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/request-promise-native": "^1.0.15"
+  }
+}
