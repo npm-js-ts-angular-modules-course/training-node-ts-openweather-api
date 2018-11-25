@@ -8,7 +8,7 @@ API Openweather with basic request.
 
 ### Installation.
 ```
-npm install openweather-api
+npm install @mugan86/openweather-api
 ```
 
 ### Generate DIST
