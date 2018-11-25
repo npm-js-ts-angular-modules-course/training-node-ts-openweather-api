@@ -31,7 +31,7 @@ export class ApiService {
             }
         );*/
         let findValue = '';
-        if (city === null || city === undefined) {
+        if (city === null || city === undefined || city === '') {
             findValue = 'London,uk';
         } else {
             const c = this.cities.selectCity(city);
