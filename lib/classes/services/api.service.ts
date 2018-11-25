@@ -24,6 +24,10 @@ export class ApiService {
         }
         return ``;
     }
+    /**
+     * 
+     * @param city 
+     */
     getCurrentWeatherInSelectCityByName(city: string) {
         // Si queremos mapear 
         /*return request.get(options).then( value => {

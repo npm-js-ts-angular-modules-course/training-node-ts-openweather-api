@@ -1,5 +1,7 @@
 # Openweather API (in working)
 
+[![npm version](https://badge.fury.io/js/%40mugan86%2Fopenweather-api.svg)](https://badge.fury.io/js/%40mugan86%2Fopenweather-api)
+
 API Openweather with basic request.
 
 ## Functions
