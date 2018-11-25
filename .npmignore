@@ -1,3 +1,4 @@
-index.ts
+
 lib/
 tsconfig.json
+check.ts
