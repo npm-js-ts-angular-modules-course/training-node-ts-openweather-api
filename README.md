@@ -28,10 +28,10 @@ tsc -w
 
 Typescript
 ```typescript
-import { ApiService } from './classes/services/api.service';
+import { ApiService } from '@mugan86/openweather-api';
 
 const api = new ApiService('YOUR_API_KEY');
-api.getCurrentWeatherInLondon().then( value =>
+api.getCurrentWeatherInLondon().then( (value: any) =>
     console.log(value)
 );
 ```
@@ -39,7 +39,7 @@ Javascript
 ```javascript
 var i = require('@mugan86/openweather-api');
 
-const api = new i.ApiService('58dda22dc16b4ec458a95a0a7f2e921d');
+const api = new i.ApiService('YOUR_API_KEY');
 api.getCurrentWeatherInLondon().then( data =>
     console.log(data)
 );
