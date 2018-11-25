@@ -4,7 +4,7 @@ API Openweather with basic request.
 
 ## Functions
 
-* Take current weather data
+* Take current weather data by differents cities by Name ('Roma', 'Barcelona', 'Paris', 'Bilbao' , 'London' (default))
 
 ### Installation.
 ```
@@ -28,21 +28,37 @@ tsc -w
 
 Typescript
 ```typescript
-import { ApiService } from '@mugan86/openweather-api';
+import { ApiService, CitiesService } from '@mugan86/openweather-api';
 
 const api = new ApiService('YOUR_API_KEY');
-api.getCurrentWeatherInLondon().then( (value: any) =>
+api.getCurrentWeatherInSelectCityByName('Roma').then( value =>
     console.log(value)
 );
+
+const cities = new CitiesService;
+console.log((cities.getList()));
+
+cities.printCitiesList();
+
+console.log(cities.selectCity('Barcelona'));
 ```
 Javascript
 ```javascript
-var i = require('@mugan86/openweather-api');
+const lib = require('@mugan86/openweather-api');
+const citiesService = lib.CitiesService;
+const apiService = lib.ApiService;
 
-const api = new i.ApiService('YOUR_API_KEY');
-api.getCurrentWeatherInLondon().then( data =>
-    console.log(data)
+const api = new apiService('YOUR_API_KEY');
+api.getCurrentWeatherInSelectCityByName('Roma').then( value =>
+    console.log(value)
 );
+
+const cities = new citiesService();
+console.log((cities.getList()));
+
+cities.printCitiesList();
+
+console.log(cities.selectCity('Barcelona'));
 ```
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
