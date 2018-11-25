@@ -25,9 +25,7 @@
   "homepage": "https://github.com/npm-js-ts-angular-modules-course/training-node-ts-openweather-api#readme",
   "dependencies": {
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.5"
-  },
-  "devDependencies": {
+    "request-promise-native": "^1.0.5",
     "@types/request-promise-native": "^1.0.15"
   }
 }
