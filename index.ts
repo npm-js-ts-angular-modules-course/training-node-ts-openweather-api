@@ -1,8 +1,8 @@
-import { ApiService } from './classes/services/api.service';
+import { ApiService } from './lib/classes/services/api.service';
 
-export * from './classes/services/api.service';
+export * from './lib/classes/services/api.service';
 
-const api = new ApiService('58dda22dc16b4ec458a95a0a7f2e921d');
+const api = new ApiService('ec32f42ea9357dae4e8e8dbc6d0f77f9');
 api.getCurrentWeatherInLondon().then( value =>
     console.log(value)
 );
