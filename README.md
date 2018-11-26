@@ -126,5 +126,46 @@ api.getCurrentWeather('zip', ['89104', true]).then( (value) => {
 }
 );
 ```
+
+
+## Build your project with Webpack
+
+If you want to include this library inside a project builds with `webpack` for a `client` application, you must add this configuration inside your `webpack configuration`:
+
+```javascript
+{
+    target: "web",
+    node: {
+        fs: "empty",
+        net: "empty",
+        tls: "empty"
+    }
+}
+``` 
+
+
+## Build your project with Webpack in Angular
+
+If you want to include this library inside a project builds with `webpack` for a `client` application, you must add this configuration inside your `webpack configuration`. Go to **node_modules/@angular-devkit/build-angular/src/angular-cli-files/webpack-configs/browser.js**
+Go to file end and replace:
+
+```javascript
+{
+    plugins: extraPlugins,
+    node: false
+}
+``` 
+with 
+```javascript
+{
+    plugins: extraPlugins,
+    target: "web",
+    node: {
+        fs: "empty",
+        net: "empty",
+        tls: "empty"
+    }
+}
+``` 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
