@@ -4,3 +4,4 @@ tsconfig.json
 check.ts
 dist/check.js
 dist/check.d.ts
+test/

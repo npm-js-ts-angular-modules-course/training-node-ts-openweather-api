@@ -12,16 +12,16 @@ API Openweather with basic request.
 * By location: Example: {lat: 36.1699412, lng: -115.13982959999998} = Las Vegas
 * By zip code: Example: 89104 - Las Vegas
 
-## Forecast Weather data (Next 5 days in 3 hours period)
+### Forecast Weather data (Next 5 days in 3 hours period)
 
 * Pending to implement
 
-### Installation.
+## Installation.
 ```
 npm install @mugan86/openweather-api
 ```
 
-### Generate DIST
+## Generate DIST
 ```
 npm run watch
 ```
@@ -30,7 +30,7 @@ or
 tsc -w
 ```
 
-### Usage
+## Usage
 
 * Register in Openweathermap.
 * Take API key from: [API Keys](https://home.openweathermap.org/api_keys)
@@ -49,10 +49,10 @@ Javascript
 const lib = require('@mugan86/openweather-api');
 const apiService = lib.ApiService;
 
-const api = new apiService('YOUR_API_KEY');
+const api = new apiService('YOUR_API_KEY'); // unit metric = metres / lang = english
 ```
 
-How to use
+## How to use
 ```javascript
 api.getCurrentWeather('city', ['Barcelona,es', true]).subscribe(
     (data) => {
