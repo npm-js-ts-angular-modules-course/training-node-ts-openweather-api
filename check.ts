@@ -1,9 +1,8 @@
 import { Result } from './lib/classes/interfaces/api.interface';
-import { ApiService } from './lib/classes/services/api.service';
-
+import { ApiService } from './lib/classes/services/api/api.service';
 
 const api = new ApiService('ec32f42ea9357dae4e8e8dbc6d0f77f9', 'm', 'es');
-api.getCurrentWeatherByCity('Madrid', 'uk').then( (value: Result) => {
+api.getCurrentWeather('city', ['Madrid,uk', true]).then( (value: Result) => {
     console.log('***********By Name ****************');
     console.log(value);
 }
@@ -13,7 +12,7 @@ console.log(error.response.body);
 }
 );
 
-api.getCurrentWeatherByCity('Barcelona', 'es').then( (value: Result) => {
+api.getCurrentWeather('city', ['Barcelona,es', true]).then( (value: Result) => {
     console.log('***********By Name ****************');
     console.log(value);
 }
@@ -24,7 +23,7 @@ console.log(error.response.body);
 );
 
 
-api.getCurrentWeatherByLocation({lat: 36.1699412, lng: -115.13982959999998}).then( (value: Result) => {
+api.getCurrentWeather('location', [{lat: 36.1699412, lng: -115.13982959999998}, true]).then( (value: Result) => {
     console.log('***********By Location ****************');
     console.log(value);
 }
@@ -33,7 +32,7 @@ api.getCurrentWeatherByLocation({lat: 36.1699412, lng: -115.13982959999998}).the
 }
 );
 
-api.getCurrentWeatherByZip('89104').then( (value: Result) => {
+api.getCurrentWeather('zip', ['89104', true]).then( (value: Result) => {
     console.log('***********By Zip ****************');
     console.log(value);
 }
