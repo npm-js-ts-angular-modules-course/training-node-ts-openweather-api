@@ -36,49 +36,12 @@ tsc -w
 * Take API key from: [API Keys](https://home.openweathermap.org/api_keys)
 * Follow this example. Basic example.
 
+### Imports
 Typescript
 ```typescript
-import { ApiService, CitiesService } from '@mugan86/openweather-api';
+import { ApiService } from '@mugan86/openweather-api';
 
 const api = new ApiService('YOUR_API_KEY', 'm', 'es');
-api.getCurrentWeather('city', ['Madrid,uk', true]).then( (value: Result) => {
-    console.log('***********By Name ****************');
-    console.log(value);
-}
-).catch(error => {
-console.log('***********By Name ****************');
-console.log(error.response.body);
-}
-);
-
-api.getCurrentWeather('city', ['Barcelona,es', true]).then( (value: Result) => {
-    console.log('***********By Name ****************');
-    console.log(value);
-}
-).catch(error => {
-console.log('***********By Name ****************');
-console.log(error.response.body);
-}
-);
-
-
-api.getCurrentWeather('location', [{lat: 36.1699412, lng: -115.13982959999998}, true]).then( (value: Result) => {
-    console.log('***********By Location ****************');
-    console.log(value);
-}
-).catch(error => {
-    console.log(error.response.body);
-}
-);
-
-api.getCurrentWeather('zip', ['89104', true]).then( (value: Result) => {
-    console.log('***********By Zip ****************');
-    console.log(value);
-}
-).catch(error => {
-    console.log(error.response.body);
-}
-);
 
 ```
 Javascript
@@ -87,46 +50,37 @@ const lib = require('@mugan86/openweather-api');
 const apiService = lib.ApiService;
 
 const api = new apiService('YOUR_API_KEY');
-api.getCurrentWeather('city', ['Madrid,uk', true]).then( (value) => {
-    console.log('***********By Name ****************');
-    console.log(value);
-}
-).catch(error => {
-console.log('***********By Name ****************');
-console.log(error.response.body);
-}
-); // 404 code
-
-api.getCurrentWeather('city', ['Barcelona,es', true]).then( (value) => {
-    console.log('***********By Name ****************');
-    console.log(value);
-}
-).catch(error => {
-console.log('***********By Name ****************');
-console.log(error.response.body);
-}
-); // 200 code
-
-
-api.getCurrentWeather('location', [{lat: 36.1699412, lng: -115.13982959999998}, true]).then( (value) => {
-    console.log('***********By Location ****************');
-    console.log(value);
-}
-).catch(error => {
-    console.log(error.response.body);
-}
-);
-
-api.getCurrentWeather('zip', ['89104', true]).then( (value) => {
-    console.log('***********By Zip ****************');
-    console.log(value);
-}
-).catch(error => {
-    console.log(error.response.body);
-}
-);
 ```
 
+How to use
+```javascript
+api.getCurrentWeather('city', ['Barcelona,es', true]).subscribe(
+    (data) => {
+        if (data.response.statusCode === 200) {
+            console.log(data.body); // Show the HTML for the Google homepage.
+        }
+    },
+    (err) => console.error(err) // Show error in console);
+);
+
+api.getCurrentWeather('location', [{lat: 36.1699412, lng: -115.13982959999998}, true]).subscribe(
+    (data) => {
+        if (data.response.statusCode === 200) {
+            console.log(data.body); // Show the HTML for the Google homepage.
+        }
+    },
+    (err) => console.error(err) // Show error in console);
+);
+
+api.getCurrentWeather('zip', ['89104', true]).subscribe(
+    (data) => {
+        if (data.response.statusCode === 200) {
+            console.log(data.body); // Show the HTML for the Google homepage.
+        }
+    },
+    (err) => console.error(err) // Show error in console);
+);
+```
 
 ## Build your project with Webpack
 
