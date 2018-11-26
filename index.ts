@@ -1,1 +1,1 @@
-export * from './lib/classes/services/services';
+export * from './lib/classes/services';
