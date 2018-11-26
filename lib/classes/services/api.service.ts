@@ -1,3 +1,4 @@
+import { Location } from './../interfaces/location.interface';
 import { CitiesService } from './cities.service';
 import { RequestService } from './request.service';
 import * as request from 'request-promise-native';
@@ -28,7 +29,7 @@ export class ApiService {
      * 
      * @param city 
      */
-    getCurrentWeatherInSelectCityByName(city: string) {
+    getCurrentWeatherByCity(city: string) {
         // Si queremos mapear 
         /*return request.get(options).then( value => {
                 return value['coord']
@@ -39,10 +40,25 @@ export class ApiService {
             findValue = 'London,uk';
         } else {
             const c = this.cities.selectCity(city);
-            findValue = `${ c.name },${ c.country}`;
+            if (c === undefined) {
+                findValue = 'q=London,uk';
+            } else {
+                findValue = `q=${ c.name },${ c.country}`;
+            }
         }
 
-        return request.get(this.req.getQuery(`weather?q=${ findValue }${ this.unitMetric }&appid=${ this.API_KEY }`));
+        return request.get(this.req.getQuery(`weather?${ findValue }${ this.unitMetric }&appid=${ this.API_KEY }`));
+    }
+
+    getCurrentWeatherByLocation(location: Location) {
+        
+        const value = `lat=${ location.lat }&lon=${ location.lng }`;
+        return request.get(this.req.getQuery(`weather?${ value }${ this.unitMetric }&appid=${ this.API_KEY }`));
+    }
+
+    getCurrentWeatherByZip(zipCode: string = "-1") {
+        return request.get(this.req.getQuery(`weather?zip=${ zipCode }${ this.unitMetric }&appid=${ this.API_KEY }`));
+
     }
 
 }
