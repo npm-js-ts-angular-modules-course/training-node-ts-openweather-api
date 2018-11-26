@@ -1,2 +1,8 @@
+// Services
 export * from './lib/classes/services';
-export * from './lib/classes/interfaces/api.interface';
+
+// Interfaces
+export * from './lib/classes/interfaces';
+
+// Enums 
+export * from './lib/classes/enums/find-type.enum';
