@@ -31,13 +31,22 @@ export const CITIES_LIST: ListData = {
         },
         {
             "name": "Roma",
-            "country": "it",
+            "country": "uk",
             "location": {
                 "lat": 41.9027835    ,    
                 "lng": 12.496365500000024
             },
-            "zip": 333
+            "zip": -1
+        },
+        {
+            "name": "Las Vegas",
+            "country": "us",
+            "location": {
+                "lat": 36.1699412,     
+                "lng": -115.13982959999998
+            },
+            "zip": -1
         }
     ],
-    "last_update": "2018-11-25"
+    "last_update": "2018-11-26"
 };
