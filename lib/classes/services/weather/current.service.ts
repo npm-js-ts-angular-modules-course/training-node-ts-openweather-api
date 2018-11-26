@@ -1,7 +1,8 @@
 import { ConfigService } from './../api/config.service';
 import { QueryService } from './../api/query.service';
 import { Location } from './../../interfaces/location.interface';
-import * as request from 'request-promise-native';
+import {RxHR} from "@akanass/rx-http-request";
+import { API_URL } from '../../../constants/environments';
 
 export class CurrentService {
     private query: QueryService;
@@ -23,11 +24,7 @@ export class CurrentService {
     * @param jsonFormat Show result in JSON
     */
     getByCity(city: string = '', jsonFormat: boolean) {
-        // Si queremos mapear 
-        /*return request.get(options).then( value => {
-                return value['coord']
-            }
-        );*/
+        
         let findValue = '';
         if (city === null || city === undefined || city === '') {
             findValue = 'q=London,uk';
@@ -35,9 +32,9 @@ export class CurrentService {
             findValue = `q=${city}`;
         }
 
-        return request.get(this.query.get(`weather?${findValue}${this.unitMetric}${this.language}`, 
-                                            this.apiKey,
-                                            jsonFormat));
+        const URL = `${API_URL }weather?${findValue}${this.unitMetric}${this.language}&appid=${ this.apiKey }`
+        return RxHR.get(URL, this.query.get(jsonFormat));
+                                            
     }
 
     /**
@@ -49,9 +46,8 @@ export class CurrentService {
      */
     getByLocation(location: Location, jsonFormat: boolean) {
         const value = `lat=${location.lat}&lon=${location.lng}`;
-        return request.get(this.query.get(`weather?${value}${this.unitMetric}${this.language}`, 
-                                            this.apiKey,
-                                            jsonFormat));
+        const URL = `${API_URL }weather?${value}${this.unitMetric}${this.language}&appid=${ this.apiKey }`
+        return RxHR.get(URL, this.query.get(jsonFormat));
     }
 
     /**
@@ -63,8 +59,7 @@ export class CurrentService {
      * @param zipCode { string } location zip code add. 
      */
     getByZip(zipCode: string = "-1", jsonFormat: boolean) {
-        return request.get(this.query.get(`weather?zip=${zipCode}${this.unitMetric}${this.language}`, 
-                                            this.apiKey,
-                                            jsonFormat));
+        const URL = `${API_URL }weather?zip=${zipCode}${this.unitMetric}${this.language}&appid=${ this.apiKey }`
+        return RxHR.get(URL, this.query.get(jsonFormat));
     }
 }

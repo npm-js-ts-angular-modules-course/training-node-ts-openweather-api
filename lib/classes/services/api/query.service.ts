@@ -13,12 +13,16 @@ export class QueryService {
      * @param apiKey API Key to identify with user to take api data
      * @param jsonValue Return JSON value format or no. Default = true
      */
-    get(query: string, apiKey: string,jsonValue: boolean = true) {
-        const url = `${ API_URL }${ query }&appid=${ apiKey }`;
-        console.log(url);
-        var options = {
-            uri: url ,
-            json: jsonValue // Para devolver un JSON o no
+    get(jsonValue: boolean = true) {
+        /*
+        qs: {
+                access_token: 'xxxxx xxxxx' // -> uri + '?access_token=xxxxx%20xxxxx'
+            },
+        headers: {
+                'User-Agent': 'Rx-Http-Request'
+            },*/
+        const options = {
+            json: jsonValue // Automatically parses the JSON string in the response
         };
         return options;
     }

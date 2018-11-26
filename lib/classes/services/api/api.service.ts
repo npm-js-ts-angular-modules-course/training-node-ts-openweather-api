@@ -22,7 +22,7 @@ export class ApiService {
     getCurrentWeather(type: string, param: Array<any>) {
         const current = new CurrentService(this.apiKey, this.unitMetric, this.language);
         if (type === 'zip') {
-            return current.getByZip(param[0], param[1]);
+            
         } else if (type === 'location') {
             return current.getByLocation(param[0], param[1]);
         } 
