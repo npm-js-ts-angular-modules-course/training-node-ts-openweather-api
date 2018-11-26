@@ -6,7 +6,15 @@ API Openweather with basic request.
 
 ## Functions
 
-* Take current weather data by differents cities by Name ('Roma', 'Barcelona', 'Paris', 'Bilbao' , 'London' (default))
+### Current Weather data.
+
+* By city name: Examples = ('Roma,it', 'Barcelona,es', 'Paris,fr', 'Bilbao,es' ,...)
+* By location: Example: {lat: 36.1699412, lng: -115.13982959999998} = Las Vegas
+* By zip code: Example: 89104 - Las Vegas
+
+## Forecast Weather data (Next 5 days in 3 hours period)
+
+* Pending to implement
 
 ### Installation.
 ```
@@ -32,35 +40,91 @@ Typescript
 ```typescript
 import { ApiService, CitiesService } from '@mugan86/openweather-api';
 
-const api = new ApiService('YOUR_API_KEY');
-api.getCurrentWeatherInSelectCityByName('Roma').then( value =>
-    console.log(value)
+const api = new ApiService('YOUR_API_KEY', 'm', 'es');
+api.getCurrentWeather('city', ['Madrid,uk', true]).then( (value: Result) => {
+    console.log('***********By Name ****************');
+    console.log(value);
+}
+).catch(error => {
+console.log('***********By Name ****************');
+console.log(error.response.body);
+}
 );
 
-const cities = new CitiesService;
-console.log((cities.getList()));
+api.getCurrentWeather('city', ['Barcelona,es', true]).then( (value: Result) => {
+    console.log('***********By Name ****************');
+    console.log(value);
+}
+).catch(error => {
+console.log('***********By Name ****************');
+console.log(error.response.body);
+}
+);
 
-cities.printCitiesList();
 
-console.log(cities.selectCity('Barcelona'));
+api.getCurrentWeather('location', [{lat: 36.1699412, lng: -115.13982959999998}, true]).then( (value: Result) => {
+    console.log('***********By Location ****************');
+    console.log(value);
+}
+).catch(error => {
+    console.log(error.response.body);
+}
+);
+
+api.getCurrentWeather('zip', ['89104', true]).then( (value: Result) => {
+    console.log('***********By Zip ****************');
+    console.log(value);
+}
+).catch(error => {
+    console.log(error.response.body);
+}
+);
+
 ```
 Javascript
 ```javascript
 const lib = require('@mugan86/openweather-api');
-const citiesService = lib.CitiesService;
 const apiService = lib.ApiService;
 
 const api = new apiService('YOUR_API_KEY');
-api.getCurrentWeatherInSelectCityByName('Roma').then( value =>
-    console.log(value)
+api.getCurrentWeather('city', ['Madrid,uk', true]).then( (value) => {
+    console.log('***********By Name ****************');
+    console.log(value);
+}
+).catch(error => {
+console.log('***********By Name ****************');
+console.log(error.response.body);
+}
+); // 404 code
+
+api.getCurrentWeather('city', ['Barcelona,es', true]).then( (value) => {
+    console.log('***********By Name ****************');
+    console.log(value);
+}
+).catch(error => {
+console.log('***********By Name ****************');
+console.log(error.response.body);
+}
+); // 200 code
+
+
+api.getCurrentWeather('location', [{lat: 36.1699412, lng: -115.13982959999998}, true]).then( (value) => {
+    console.log('***********By Location ****************');
+    console.log(value);
+}
+).catch(error => {
+    console.log(error.response.body);
+}
 );
 
-const cities = new citiesService();
-console.log((cities.getList()));
-
-cities.printCitiesList();
-
-console.log(cities.selectCity('Barcelona'));
+api.getCurrentWeather('zip', ['89104', true]).then( (value) => {
+    console.log('***********By Zip ****************');
+    console.log(value);
+}
+).catch(error => {
+    console.log(error.response.body);
+}
+);
 ```
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
