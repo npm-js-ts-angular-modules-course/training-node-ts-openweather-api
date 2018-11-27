@@ -25,4 +25,18 @@ export class ConfigService {
         }
         return `&lang=${language}`;
     }
+
+    public static options(jsonValue: boolean = true) {
+        /*
+        qs: {
+                access_token: 'xxxxx xxxxx' // -> uri + '?access_token=xxxxx%20xxxxx'
+            },
+        headers: {
+                'User-Agent': 'Rx-Http-Request'
+            },*/
+        const options = {
+            json: jsonValue // Automatically parses the JSON string in the response
+        };
+        return options;
+    }
 }

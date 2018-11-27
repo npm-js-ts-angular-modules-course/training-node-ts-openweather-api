@@ -1,16 +1,13 @@
 import { ConfigService } from './../api/config.service';
-import { QueryService } from './../api/query.service';
 import { Location } from './../../interfaces/location.interface';
 import {RxHR} from "@akanass/rx-http-request";
 import { API_URL } from '../../../constants/environments';
 
 export class CurrentService {
-    private query: QueryService;
     private apiKey: string;
     private unitMetric: string;
     private language: string;
     constructor(apiKey: string, unitMetric: string = 'm', lang: string = 'en') {
-        this.query = new QueryService();
         this.apiKey = apiKey;
         this.unitMetric = ConfigService.setUnitMetric(unitMetric);
         this.language = ConfigService.setLanguage(lang);
@@ -33,7 +30,7 @@ export class CurrentService {
         }
 
         const URL = `${API_URL }weather?${findValue}${this.unitMetric}${this.language}&appid=${ this.apiKey }`
-        return RxHR.get(URL, this.query.get(jsonFormat));
+        return RxHR.get(URL, ConfigService.options(jsonFormat));
                                             
     }
 
@@ -47,7 +44,7 @@ export class CurrentService {
     getByLocation(location: Location, jsonFormat: boolean) {
         const value = `lat=${location.lat}&lon=${location.lng}`;
         const URL = `${API_URL }weather?${value}${this.unitMetric}${this.language}&appid=${ this.apiKey }`
-        return RxHR.get(URL, this.query.get(jsonFormat));
+        return RxHR.get(URL, ConfigService.options(jsonFormat));
     }
 
     /**
@@ -60,6 +57,6 @@ export class CurrentService {
      */
     getByZip(zipCode: string = "-1", jsonFormat: boolean) {
         const URL = `${API_URL }weather?zip=${zipCode}${this.unitMetric}${this.language}&appid=${ this.apiKey }`
-        return RxHR.get(URL, this.query.get(jsonFormat));
+        return RxHR.get(URL, ConfigService.options(jsonFormat));
     }
 }
