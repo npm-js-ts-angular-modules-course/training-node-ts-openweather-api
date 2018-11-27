@@ -2,11 +2,7 @@ import { ConfigService } from './../api/config.service';
 import { Location } from './../../interfaces/location.interface';
 import {RxHR} from "@akanass/rx-http-request";
 import { API_URL } from '../../../constants/environments';
-import { Rxios } from 'rxios';
-const http = new Rxios();
-interface MyResponse {
-    userId: number; id: number; title: string
-};
+
 export class CurrentService {
     private apiKey: string;
     private unitMetric: string;
@@ -17,18 +13,6 @@ export class CurrentService {
         this.language = ConfigService.setLanguage(lang);
     }
     
-    getTest(city: string = '', jsonFormat: boolean) {
-        let findValue = '';
-        if (city === null || city === undefined || city === '') {
-            findValue = 'q=London,uk';
-        } else {
-            findValue = `q=${city}`;
-        }
-
-        const URL = `${API_URL }weather?${findValue}${this.unitMetric}${this.language}&appid=${ this.apiKey }`
-        return http.get(URL, ConfigService.options(jsonFormat))
-            
-    }
     /**
     * Take current weather of select city and country.
     * @example
