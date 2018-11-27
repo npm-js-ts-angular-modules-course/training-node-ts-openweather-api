@@ -25,6 +25,8 @@
   "homepage": "https://github.com/npm-js-ts-angular-modules-course/training-node-ts-openweather-api#readme",
   "dependencies": {
     "@akanass/rx-http-request": "^3.1.0",
+    "axios": "^0.18.0",
+    "rxios": "^1.1.2",
     "rxjs": "^6.3.3"
   },
   "devDependencies": {
