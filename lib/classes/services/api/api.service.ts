@@ -20,12 +20,16 @@ export class ApiService {
      * @param param array with contain 2 positions data. In first filter data and second JSON Format or no
      */
     getCurrentWeather(type: string, param: Array<any>) {
-        const current = new CurrentService(this.apiKey, this.unitMetric, this.language);
+        /*const current = new CurrentService(this.apiKey, this.unitMetric, this.language);
         if (type === 'zip') {
             return current.getByZip(param[0], param[1]);
         } else if (type === 'location') {
             return current.getByLocation(param[0], param[1]);
-        } 
-        return current.getByCity(param[0], param[1]); // by city
+        } else if (type === '****') {
+            
+        }
+        return current.getByCity(param[0], param[1]); // by city*/
+        const current = new CurrentService(this.apiKey, this.unitMetric, this.language);
+        return current.getTest(param[0], param[1]);
     }
 }
