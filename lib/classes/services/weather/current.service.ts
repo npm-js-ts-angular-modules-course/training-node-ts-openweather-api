@@ -16,8 +16,8 @@ export class CurrentService {
     /**
     * Take current weather of select city and country.
     * @example
-    * getByCity('Madrid,es', 'es') --> Madrid (Spain) current weather Data.
-    * getByCity('Barcelona', '', true) --> Find Barcelona (Spain)
+    * getByCity('Madrid,es') --> Madrid (Spain) current weather Data.
+    * getByCity('Barcelona') --> Find Barcelona (Spain)
     * @param city { string} add select city.
     */
     async getByCity(city: string = '') {
@@ -44,7 +44,7 @@ export class CurrentService {
      * @param location {Location} Add location coordinates in {lat: number, lng: number } format
      */
     async getByLocation(location: Location) {
-        const value = `lat=${location.lat}&lon=${location.lng}`;
+        const value = `lat=${location.lat}&lon=${location.lon}`;
         const URL = `${API_URL }weather?${value}${this.unitMetric}${this.language}&appid=${ this.apiKey }`
         return axios.get(URL).then(
             data => { return data.data; }
