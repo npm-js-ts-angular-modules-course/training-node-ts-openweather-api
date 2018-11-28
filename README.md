@@ -54,29 +54,26 @@ const api = new apiService('YOUR_API_KEY'); // unit metric = metres / lang = eng
 
 ## How to use
 ```javascript
-api.getCurrentWeather('city', ['Barcelona,es', true]).subscribe(
+api.getCurrentWeather('city', ['Barcelona,es']).then(
     (data) => {
-        if (data.response.statusCode === 200) {
-            console.log(data.body); // Show the HTML for the Google homepage.
-        }
+        console.log('***************** BARCELONA *****************');
+        console.log(data)
     },
     (err) => console.error(err) // Show error in console);
 );
 
-api.getCurrentWeather('location', [{lat: 36.1699412, lng: -115.13982959999998}, true]).subscribe(
-    (data) => {
-        if (data.response.statusCode === 200) {
-            console.log(data.body); // Show the HTML for the Google homepage.
-        }
+api.getCurrentWeather('zip', ['89104']).then(
+    (data) => { 
+        console.log('***************** LAS VEGAS *****************');
+        console.log(data)
     },
     (err) => console.error(err) // Show error in console);
 );
 
-api.getCurrentWeather('zip', ['89104', true]).subscribe(
-    (data) => {
-        if (data.response.statusCode === 200) {
-            console.log(data.body); // Show the HTML for the Google homepage.
-        }
+api.getCurrentWeather('location', [{lat: 36.1699412, lng: -115.13982959999998}]).then(
+    (data) => { 
+        console.log('***************** LAS VEGAS *****************');
+        console.log(data)
     },
     (err) => console.error(err) // Show error in console);
 );
