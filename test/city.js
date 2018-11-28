@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const nock = require('nock');
+
 const apiService = require('../dist/index').ApiService;
 const constants = require('./constants');
 const API_KEY = constants.apiKey;
@@ -7,6 +7,7 @@ const API_URL = constants.apiUrl;
 
 describe('Current Weather with City filter', () => {
     beforeEach(() => {
+        const nockCity = require('nock');
         const bilbaoCity = require('./city/bilbao');
 
         const query = {
@@ -15,8 +16,8 @@ describe('Current Weather with City filter', () => {
             'lang': 'en',
             'appid': API_KEY
         };
-        nock(API_URL)
-            .log(console.log)
+        nockCity(API_URL)
+            /*.log(console.log)*/
             .get('/data/2.5/weather')
             .query(query)
             .reply(200, bilbaoCity);
@@ -34,15 +35,15 @@ describe('Current Weather with City filter', () => {
 
     beforeEach(() => {
         const bcnCity = require('./city/bcn');
-
+        const nockBcnCity = require('nock');
         const query = {
             'q': 'Barcelona,es',
             'units': 'metric',
             'lang': 'es',
             'appid': API_KEY
         };
-        nock(API_URL)
-            .log(console.log)
+        nockBcnCity(API_URL)
+            /*.log(console.log)*/
             .get('/data/2.5/weather')
             .query(query)
             .reply(200, bcnCity);
