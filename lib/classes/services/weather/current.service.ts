@@ -1,7 +1,7 @@
 import { ConfigService } from './../api/config.service';
 import { Location } from './../../interfaces/location.interface';
-import {RxHR} from "@akanass/rx-http-request";
 import { API_URL } from '../../../constants/environments';
+import axios from 'axios';
 
 export class CurrentService {
     private apiKey: string;
@@ -19,9 +19,8 @@ export class CurrentService {
     * getByCity('Madrid,es', 'es') --> Madrid (Spain) current weather Data.
     * getByCity('Barcelona', '', true) --> Find Barcelona (Spain)
     * @param city { string} add select city.
-    * @param jsonFormat Show result in JSON
     */
-    getByCity(city: string = '', jsonFormat: boolean) {
+    async getByCity(city: string = '') {
         
         let findValue = '';
         if (city === null || city === undefined || city === '') {
@@ -29,9 +28,11 @@ export class CurrentService {
         } else {
             findValue = `q=${city}`;
         }
-
         const URL = `${API_URL }weather?${findValue}${this.unitMetric}${this.language}&appid=${ this.apiKey }`
-        return RxHR.get(URL, ConfigService.options(jsonFormat));
+        // return RxHR.get(URL, ConfigService.options(jsonFormat));
+        return axios.get(URL).then(
+            data => { return data.data; }
+        );
                                             
     }
 
@@ -42,10 +43,12 @@ export class CurrentService {
      * location = {lat: 41.9027835, lng: 12.496365500000024} - Roma
      * @param location {Location} Add location coordinates in {lat: number, lng: number } format
      */
-    getByLocation(location: Location, jsonFormat: boolean) {
+    async getByLocation(location: Location) {
         const value = `lat=${location.lat}&lon=${location.lng}`;
         const URL = `${API_URL }weather?${value}${this.unitMetric}${this.language}&appid=${ this.apiKey }`
-        return RxHR.get(URL, ConfigService.options(jsonFormat));
+        return axios.get(URL).then(
+            data => { return data.data; }
+        );
     }
 
     /**
@@ -56,8 +59,10 @@ export class CurrentService {
      * Bilbao = 48002
      * @param zipCode { string } location zip code add. 
      */
-    getByZip(zipCode: string = "-1", jsonFormat: boolean) {
+    async getByZip(zipCode: string = "-1") {
         const URL = `${API_URL }weather?zip=${zipCode}${this.unitMetric}${this.language}&appid=${ this.apiKey }`
-        return RxHR.get(URL, ConfigService.options(jsonFormat));
+        return axios.get(URL).then(
+            data => { return data.data; }
+        );
     }
 }

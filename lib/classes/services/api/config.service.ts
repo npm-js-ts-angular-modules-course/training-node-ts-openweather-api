@@ -1,4 +1,6 @@
 import { AVAILABLE_LANGS } from './../../../constants/languages';
+import axios from 'axios';
+
 export class ConfigService {
     /**
      * Manage to return metric or standard metric values
@@ -24,6 +26,14 @@ export class ConfigService {
             return ``;
         }
         return `&lang=${language}`;
+    }
+
+    /**
+     * Add headers in JSON Format
+     * @param json 
+     */
+    public static setJsonFormat() {
+        axios.defaults.headers.get['Content-Type'] = 'application/json';
     }
 
     public static options(jsonValue: boolean = true) {

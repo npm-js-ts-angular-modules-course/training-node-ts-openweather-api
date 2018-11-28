@@ -1,5 +1,6 @@
 import { CurrentService } from './../weather/current.service';
 import axios from 'axios';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 export class ApiService {
     private apiKey: string;
@@ -11,29 +12,22 @@ export class ApiService {
         this.unitMetric = unitMet;
         this.language = lang;
     }
-
-    async getData() {
-        // Make a request for a user with a given ID
-        return axios.get('https://api.openweathermap.org/data/2.5/weather?q=Bilbao&units=metric&appid=ec32f42ea9357dae4e8e8dbc6d0f77f9').then(
-            data => { return data.data; }
-        );
-    }
     /**
      * Get current weather data using name, locaton or zip filters.
      * @example
-     * getCurrentWeather('city', ['Madrid,es' true]) -> Madrid with JSON format
-     * getCurrentWeather('location', [{lat: 36.1699412, lng: -115.13982959999998}, true]) -> Las Vegas with JSON format
-     * getCurrentWeather('zip', ['89104' true]) -> Las Vegas with JSON format
+     * getCurrentWeather('city', ['Madrid,es']) -> Madrid
+     * getCurrentWeather('location', [{lat: 36.1699412, lng: -115.13982959999998}]) -> Las Vegas
+     * getCurrentWeather('zip', ['89104']) -> Las Vegas
      * @param type Filter to use to find weather dependent input data
-     * @param param array with contain 2 positions data. In first filter data and second JSON Format or no
+     * @param param array with contain 1 position data in any format. In first filter data
      */
-    getCurrentWeather(type: string, param: Array<any>) {
+    async getCurrentWeather(type: string, param: Array<any>) {
         const current = new CurrentService(this.apiKey, this.unitMetric, this.language);
         if (type === 'zip') {
-            return current.getByZip(param[0], param[1]);
+            return current.getByZip(param[0]).then(data => data);
         } else if (type === 'location') {
-            return current.getByLocation(param[0], param[1]);
+            return current.getByLocation(param[0]).then(data => data);
         } 
-        return current.getByCity(param[0], param[1]); // by city
+        return current.getByCity(param[0]).then(data => data); // by city
     }
 }
