@@ -28,7 +28,31 @@ api.getCurrentWeather('zip', ['89104', true]).subscribe(
         }
     },
     (err) => console.error(err) // Show error in console);
-);*/
+);
 
-const current = new CurrentService('ec32f42ea9357dae4e8e8dbc6d0f77f9', 'metric', 'es');
-current.getTest('Barcelona,es', true)
+*/
+// https://scotch.io/tutorials/nodejs-tests-mocking-http-requests
+
+api.getCurrentWeather('city', ['Barcelona,es', true]).then(
+    (data) => {
+        console.log('***************** BARCELONA *****************');
+        console.log(data)
+    },
+    (err) => console.error(err) // Show error in console);
+);
+
+api.getCurrentWeather('zip', ['89104', true]).then(
+    (data) => { 
+        console.log('***************** LAS VEGAS *****************');
+        console.log(data)
+    },
+    (err) => console.error(err) // Show error in console);
+);
+
+api.getCurrentWeather('location', [{lat: 36.1699412, lng: -115.13982959999998}, true]).then(
+    (data) => { 
+        console.log('***************** LAS VEGAS *****************');
+        console.log(data)
+    },
+    (err) => console.error(err) // Show error in console);
+);
