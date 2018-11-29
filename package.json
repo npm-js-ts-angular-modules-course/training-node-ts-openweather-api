@@ -1,6 +1,6 @@
 {
   "name": "@mugan86/openweather-api",
-  "version": "2.1.0",
+  "version": "2.1.0-beta",
   "description": "Openweather Api Project in Node Typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,9 +24,7 @@
   },
   "homepage": "https://github.com/npm-js-ts-angular-modules-course/training-node-ts-openweather-api#readme",
   "dependencies": {
-    "@akanass/rx-http-request": "^3.1.0",
-    "axios": "^0.18.0",
-    "rxjs": "^6.3.3"
+    "axios": "^0.18.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
