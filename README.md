@@ -1,6 +1,7 @@
 # Openweather API (in working)
 
-[![npm version](https://badge.fury.io/js/%40mugan86%2Fopenweather-api.svg)](https://badge.fury.io/js/%40mugan86%2Fopenweather-api)
+[![npm version](https://badge.fury.io/js/%40mugan86%2Fopenweather-api.svg)](https://badge.fury.io/js/%40mugan86%2Fopenweather-api) 
+[![Build Status](https://travis-ci.org/npm-js-ts-angular-modules-course/training-node-ts-openweather-api.svg?branch=master)](https://travis-ci.org/npm-js-ts-angular-modules-course/training-node-ts-openweather-api)
 
 API Openweather with basic request.
 
