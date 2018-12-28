@@ -8,11 +8,11 @@
     "test": "mocha",
     "build": "tsc",
     "watch": "tsc -w",
-    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.doc.json --hideGenerator -w -o -s",
-    "create-doc": "./node_modules/.bin/compodoc -p tsconfig.doc.json --hideGenerator",
+    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.doc.json --hideGenerator -w -o -s --customFavicon favicon.ico",
+    "create-doc": "./node_modules/.bin/compodoc -p tsconfig.doc.json --hideGenerator --customFavicon favicon.ico",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js -- -R spec",
     "doc-publish": "npm run create-doc && firebase deploy",
-    "publish": "npm publish && npm run doc-publish"
+    "publish-firebase": "npm publish && npm run doc-publish"
   },
   "repository": {
     "type": "git",

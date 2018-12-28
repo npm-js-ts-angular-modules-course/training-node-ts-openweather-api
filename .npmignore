@@ -5,3 +5,8 @@ check.ts
 dist/check.js
 dist/check.d.ts
 test/
+documentation/
+coverage
+firebase.json
+.firebaserc
+tsconfig.doc.json
