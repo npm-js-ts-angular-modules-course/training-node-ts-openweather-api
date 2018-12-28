@@ -98,7 +98,7 @@ If you want to include this library inside a project builds with `webpack` for a
 
 ## Build your project with Webpack in Angular
 
-If you want to include this library inside a project builds with `webpack` for a `client` application, you must add this configuration inside your `webpack configuration`. Go to **node_modules/@angular-devkit/build-angular/src/angular-cli-files/webpack-configs/browser.js**
+If you want to include this library inside a project builds with `webpack` for a `client` application, you must add this configuration inside your `webpack configuration`. Go to **node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs/browser.js**
 Go to file end and replace:
 
 ```javascript
