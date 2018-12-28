@@ -1,6 +1,9 @@
 import { AVAILABLE_LANGS } from './../../../constants/languages';
 import axios from 'axios';
 
+/**
+ * Service to manage library config values
+ */
 export class ConfigService {
     /**
      * Manage to return metric or standard metric values
@@ -36,6 +39,10 @@ export class ConfigService {
         axios.defaults.headers.get['Content-Type'] = 'application/json';
     }
 
+    /**
+     * Take options
+     * @param jsonValue take JSON format or no
+     */
     public static options(jsonValue: boolean = true) {
         /*
         qs: {

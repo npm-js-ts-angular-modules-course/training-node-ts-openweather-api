@@ -7,7 +7,12 @@
   "scripts": {
     "test": "mocha",
     "build": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.doc.json --hideGenerator -w -o -s",
+    "create-doc": "./node_modules/.bin/compodoc -p tsconfig.doc.json --hideGenerator",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js -- -R spec",
+    "doc-publish": "npm run create-doc && firebase deploy",
+    "publish": "npm publish && npm run doc-publish"
   },
   "repository": {
     "type": "git",
@@ -27,7 +32,10 @@
     "axios": "^0.18.0"
   },
   "devDependencies": {
+    "@compodoc/compodoc": "^1.1.7",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
+    "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "nock": "^10.0.2"
   }

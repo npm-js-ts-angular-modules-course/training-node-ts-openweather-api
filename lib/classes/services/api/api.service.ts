@@ -2,11 +2,28 @@ import { CurrentService } from './../weather/current.service';
 import axios from 'axios';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
+/**
+ * Service that manage API differents requests
+ */
 export class ApiService {
+    /**
+     * Need Api Key to take API info
+     */
     private apiKey: string;
-
+    /**
+     * Property to define use unit metric, metres or milles
+     */
     private unitMetric: string;
+    /**
+     * select language
+     */
     private language: string;
+    /**
+     * Take construct default properties by params
+     * @param apiKey Need Api Key
+     * @param unitMet Default unit metric
+     * @param lang Select language
+     */
     constructor(apiKey: string, unitMet: string = 'm', lang: string = 'en') {
         this.apiKey = apiKey;
         this.unitMetric = unitMet;

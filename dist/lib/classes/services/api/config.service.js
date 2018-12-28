@@ -5,6 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const languages_1 = require("./../../../constants/languages");
 const axios_1 = __importDefault(require("axios"));
+/**
+ * Service to manage library config values
+ */
 class ConfigService {
     /**
      * Manage to return metric or standard metric values
@@ -36,6 +39,10 @@ class ConfigService {
     static setJsonFormat() {
         axios_1.default.defaults.headers.get['Content-Type'] = 'application/json';
     }
+    /**
+     * Take options
+     * @param jsonValue take JSON format or no
+     */
     static options(jsonValue = true) {
         /*
         qs: {

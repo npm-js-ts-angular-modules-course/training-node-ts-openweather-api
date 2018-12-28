@@ -14,7 +14,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const current_service_1 = require("./../weather/current.service");
 const axios_1 = __importDefault(require("axios"));
 axios_1.default.defaults.headers.post['Content-Type'] = 'application/json';
+/**
+ * Service that manage API differents requests
+ */
 class ApiService {
+    /**
+     * Take construct default properties by params
+     * @param apiKey Need Api Key
+     * @param unitMet Default unit metric
+     * @param lang Select language
+     */
     constructor(apiKey, unitMet = 'm', lang = 'en') {
         this.apiKey = apiKey;
         this.unitMetric = unitMet;

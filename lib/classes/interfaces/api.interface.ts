@@ -1,8 +1,14 @@
+/**
+ * Location coordinates interface with lon and lat properties
+ */
 export interface Coord {
     lon: number;
     lat: number;
 }
 
+/**
+ * Take weather information properties definition
+ */
 export interface Weather {
     id: number;
     main: string;
