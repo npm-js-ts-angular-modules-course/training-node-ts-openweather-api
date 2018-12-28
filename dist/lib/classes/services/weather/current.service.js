@@ -14,7 +14,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const config_service_1 = require("./../api/config.service");
 const environments_1 = require("../../../constants/environments");
 const axios_1 = __importDefault(require("axios"));
+/**
+ * Current Weather serve service
+ */
 class CurrentService {
+    /**
+     * @ignore
+     */
     constructor(apiKey, unitMetric = 'm', lang = 'en') {
         this.apiKey = apiKey;
         this.unitMetric = config_service_1.ConfigService.setUnitMetric(unitMetric);

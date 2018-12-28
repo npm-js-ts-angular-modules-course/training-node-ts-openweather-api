@@ -1,8 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const cities_list_1 = require("./../../constants/cities-list");
+/**
+ * Manage cities info
+ */
 class CitiesService {
     constructor() {
+        /**
+         * Take cities list from constants
+         */
         this.list = cities_list_1.CITIES_LIST;
     }
     /**

@@ -1,2 +1,5 @@
+/**
+ * @ignore
+ */
 declare class Forecast {
 }

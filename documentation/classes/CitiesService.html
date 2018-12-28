@@ -63,6 +63,13 @@
             <code>lib/classes/services/cities.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Manage cities info</p>
+
+            </p>
 
 
 
@@ -147,10 +154,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="3" class="link-to-prism">lib/classes/services/cities.service.ts:3</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">lib/classes/services/cities.service.ts:9</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Take cities list from constants</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -183,7 +196,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">lib/classes/services/cities.service.ts:8</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">lib/classes/services/cities.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -263,7 +276,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">lib/classes/services/cities.service.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">lib/classes/services/cities.service.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -303,7 +316,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">lib/classes/services/cities.service.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">lib/classes/services/cities.service.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -369,7 +382,13 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CITIES_LIST } from &#x27;./../../constants/cities-list&#x27;;
+/**
+ * Manage cities info
+ */
 export class CitiesService {
+    /**
+     * Take cities list from constants
+     */
     list &#x3D; CITIES_LIST;
     /**
      * Take available cities list

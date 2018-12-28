@@ -14,6 +14,9 @@ export interface Weather {
     description: string;
     icon: string;
 }
+/**
+ * @ignore
+ */
 export interface Main {
     temp: number;
     pressure: number;

@@ -3,10 +3,25 @@ import { Location } from './../../interfaces/location.interface';
 import { API_URL } from '../../../constants/environments';
 import axios from 'axios';
 
+/**
+ * Current Weather serve service
+ */
 export class CurrentService {
+    /**
+     * @ignore
+     */
     private apiKey: string;
+    /**
+     * @ignore
+     */
     private unitMetric: string;
+    /**
+     * @ignore
+     */
     private language: string;
+    /**
+     * @ignore
+     */
     constructor(apiKey: string, unitMetric: string = 'm', lang: string = 'en') {
         this.apiKey = apiKey;
         this.unitMetric = ConfigService.setUnitMetric(unitMetric);

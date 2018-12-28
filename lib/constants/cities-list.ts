@@ -1,5 +1,9 @@
 import { ListData } from './../classes/interfaces/list.interface';
 
+/**
+ * No data
+ * @ignore
+ */
 export const CITIES_LIST: ListData = {
     "list": [
         {

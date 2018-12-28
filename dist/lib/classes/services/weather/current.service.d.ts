@@ -1,8 +1,23 @@
 import { Location } from './../../interfaces/location.interface';
+/**
+ * Current Weather serve service
+ */
 export declare class CurrentService {
+    /**
+     * @ignore
+     */
     private apiKey;
+    /**
+     * @ignore
+     */
     private unitMetric;
+    /**
+     * @ignore
+     */
     private language;
+    /**
+     * @ignore
+     */
     constructor(apiKey: string, unitMetric?: string, lang?: string);
     /**
     * Take current weather of select city and country.

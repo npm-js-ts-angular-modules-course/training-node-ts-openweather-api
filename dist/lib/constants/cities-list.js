@@ -1,5 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * No data
+ * @ignore
+ */
 exports.CITIES_LIST = {
     "list": [
         {

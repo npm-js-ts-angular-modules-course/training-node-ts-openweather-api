@@ -1,6 +1,6 @@
 import { Location } from './location.interface';
 /**
- * One city interface definition
+ * @ignore
  */
 export interface City {
     name: string;

@@ -1,5 +1,11 @@
 import { CITIES_LIST } from './../../constants/cities-list';
+/**
+ * Manage cities info
+ */
 export class CitiesService {
+    /**
+     * Take cities list from constants
+     */
     list = CITIES_LIST;
     /**
      * Take available cities list
