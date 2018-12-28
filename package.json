@@ -26,15 +26,6 @@
   "dependencies": {
     "axios": "^0.18.0"
   },
-  "permissions": {
-    "browser": [
-      "network"
-    ],
-    "node": [
-      "http",
-      "fs"
-    ]
-  },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
