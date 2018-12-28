@@ -1,0 +1,182 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@mugan86/openweather-api documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">@mugan86/openweather-api documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="openweather-api-in-working-">Openweather API (in working)</h1>
+<p><a href="https://badge.fury.io/js/%40mugan86%2Fopenweather-api"><img src="https://badge.fury.io/js/%40mugan86%2Fopenweather-api.svg" alt="npm version" class="img-responsive"></a> 
+<a href="https://travis-ci.org/npm-js-ts-angular-modules-course/training-node-ts-openweather-api"><img src="https://travis-ci.org/npm-js-ts-angular-modules-course/training-node-ts-openweather-api.svg?branch=master" alt="Build Status" class="img-responsive"></a>
+<a href="https://coveralls.io/github/npm-js-ts-angular-modules-course/training-node-ts-openweather-api?branch=master"><img src="https://coveralls.io/repos/github/npm-js-ts-angular-modules-course/training-node-ts-openweather-api/badge.svg?branch=master" alt="Coverage Status" class="img-responsive"></a></p>
+<p>API Openweather with basic request.</p>
+<h2 id="functions">Functions</h2>
+<h3 id="current-weather-data-">Current Weather data.</h3>
+<ul>
+<li>By city name: Examples = (&#39;Roma,it&#39;, &#39;Barcelona,es&#39;, &#39;Paris,fr&#39;, &#39;Bilbao,es&#39; ,...)</li>
+<li>By location: Example: {lat: 36.1699412, lng: -115.13982959999998} = Las Vegas</li>
+<li>By zip code: Example: 89104 - Las Vegas</li>
+</ul>
+<h3 id="forecast-weather-data-next-5-days-in-3-hours-period-">Forecast Weather data (Next 5 days in 3 hours period)</h3>
+<ul>
+<li>Pending to implement</li>
+</ul>
+<h2 id="installation-">Installation.</h2>
+<div><pre class="line-numbers"><code class="language-none">npm install &#64;mugan86/openweather-api</code></pre></div><h2 id="generate-dist">Generate DIST</h2>
+<div><pre class="line-numbers"><code class="language-none">npm run watch</code></pre></div><p>or</p>
+<div><pre class="line-numbers"><code class="language-none">tsc -w</code></pre></div><h2 id="usage">Usage</h2>
+<ul>
+<li>Register in Openweathermap.</li>
+<li>Take API key from: <a href="https://home.openweathermap.org/api_keys">API Keys</a></li>
+<li>Follow this example. Basic example.</li>
+</ul>
+<h3 id="imports">Imports</h3>
+<p>Typescript</p>
+<div><pre class="line-numbers"><code class="language-typescript">import { ApiService } from &#39;&#64;mugan86/openweather-api&#39;;
+
+const api = new ApiService(&#39;YOUR_API_KEY&#39;, &#39;m&#39;, &#39;es&#39;);
+</code></pre></div><p>Javascript</p>
+<div><pre class="line-numbers"><code class="language-javascript">const lib = require(&#39;&#64;mugan86/openweather-api&#39;);
+const apiService = lib.ApiService;
+
+const api = new apiService(&#39;YOUR_API_KEY&#39;); // unit metric = metres / lang = english</code></pre></div><h2 id="how-to-use">How to use</h2>
+<div><pre class="line-numbers"><code class="language-javascript">api.getCurrentWeather(&#39;city&#39;, [&#39;Barcelona,es&#39;]).then(
+    (data) =&gt; {
+        console.log(&#39;***************** BARCELONA *****************&#39;);
+        console.log(data)
+    },
+    (err) =&gt; console.error(err) // Show error in console);
+);
+
+api.getCurrentWeather(&#39;zip&#39;, [&#39;89104&#39;]).then(
+    (data) =&gt; { 
+        console.log(&#39;***************** LAS VEGAS *****************&#39;);
+        console.log(data)
+    },
+    (err) =&gt; console.error(err) // Show error in console);
+);
+
+api.getCurrentWeather(&#39;location&#39;, [{lat: 36.1699412, lng: -115.13982959999998}]).then(
+    (data) =&gt; { 
+        console.log(&#39;***************** LAS VEGAS *****************&#39;);
+        console.log(data)
+    },
+    (err) =&gt; console.error(err) // Show error in console);
+);</code></pre></div><h2 id="build-your-project-with-webpack">Build your project with Webpack</h2>
+<p>If you want to include this library inside a project builds with <code>webpack</code> for a <code>client</code> application, you must add this configuration inside your <code>webpack configuration</code>:</p>
+<div><pre class="line-numbers"><code class="language-javascript">{
+    target: &quot;web&quot;,
+    node: {
+        fs: &quot;empty&quot;,
+        net: &quot;empty&quot;,
+        tls: &quot;empty&quot;
+    }
+}</code></pre></div><h2 id="build-your-project-with-webpack-in-angular">Build your project with Webpack in Angular</h2>
+<p>If you want to include this library inside a project builds with <code>webpack</code> for a <code>client</code> application, you must add this configuration inside your <code>webpack configuration</code>. Go to <strong>node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs/browser.js</strong>
+Go to file end and replace:</p>
+<div><pre class="line-numbers"><code class="language-javascript">{
+    plugins: extraPlugins,
+    node: false
+}</code></pre></div><p>with </p>
+<div><pre class="line-numbers"><code class="language-javascript">{
+    plugins: extraPlugins,
+    target: &quot;web&quot;,
+    node: {
+        fs: &quot;empty&quot;,
+        net: &quot;empty&quot;,
+        tls: &quot;empty&quot;
+    }
+}</code></pre></div><h2 id="license">License</h2>
+<p><a href="https://choosealicense.com/licenses/mit/">MIT</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
