@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/%40mugan86%2Fopenweather-api.svg)](https://badge.fury.io/js/%40mugan86%2Fopenweather-api) 
 [![Build Status](https://travis-ci.org/npm-js-ts-angular-modules-course/training-node-ts-openweather-api.svg?branch=master)](https://travis-ci.org/npm-js-ts-angular-modules-course/training-node-ts-openweather-api)
 [![Coverage Status](https://coveralls.io/repos/github/npm-js-ts-angular-modules-course/training-node-ts-openweather-api/badge.svg?branch=master)](https://coveralls.io/github/npm-js-ts-angular-modules-course/training-node-ts-openweather-api?branch=master)
-
+[![Documentation](https://raw.githubusercontent.com/npm-js-ts-angular-modules-course/training-node-ts-openweather-api/master/documentation/images/coverage-badge-documentation.svg?sanitize=true)](https://github.com/npm-js-ts-angular-modules-course/training-node-ts-openweather-api)
 
 API Openweather with basic request.
 
