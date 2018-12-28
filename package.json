@@ -1,6 +1,6 @@
 {
   "name": "@mugan86/openweather-api",
-  "version": "2.1.0-beta",
+  "version": "2.1.0",
   "description": "Openweather Api Project in Node Typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,8 +27,13 @@
     "axios": "^0.18.0"
   },
   "permissions": {
-    "browser": ["network"],
-    "node": ["http", "fs"]
+    "browser": [
+      "network"
+    ],
+    "node": [
+      "http",
+      "fs"
+    ]
   },
   "devDependencies": {
     "chai": "^4.2.0",
