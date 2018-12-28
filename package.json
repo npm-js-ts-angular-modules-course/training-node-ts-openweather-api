@@ -1,6 +1,6 @@
 {
   "name": "@mugan86/openweather-api",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Openweather Api Project in Node Typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
