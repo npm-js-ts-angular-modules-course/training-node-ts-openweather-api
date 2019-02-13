@@ -10,3 +10,10 @@ coverage
 firebase.json
 .firebaserc
 tsconfig.doc.json
+.firebase/hosting.ZG9jdW1lbnRhdGlvbg.cache
+.travis.yml 
+favicon.ico
+webpack.config.ts
+index.ts
+mugan86-openweather-api-*.tgz
+check.js

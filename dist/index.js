@@ -7,3 +7,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./lib/classes/services"));
 // Enums 
 __export(require("./lib/classes/enums/find-type.enum"));
+__export(require("./webpack.config"));

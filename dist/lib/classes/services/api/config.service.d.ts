@@ -6,7 +6,7 @@ export declare class ConfigService {
      * Manage to return metric or standard metric values
      * @param unit Metric unit to return value in temperature with celsius or kelvin
      */
-    static setUnitMetric(unit: string): "&units=metric" | "";
+    static setUnitMetric(unit: string): "" | "&units=metric";
     /**
      * Define default language use to show description in select language
      * @example

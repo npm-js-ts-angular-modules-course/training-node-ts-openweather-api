@@ -54,9 +54,9 @@ export class CurrentService {
     /**
      * Take current weather data in select place to add coordinates
      * @example 
-     * location = {lat: 36.1699412, lng: -115.13982959999998} - Las Vegas
-     * location = {lat: 41.9027835, lng: 12.496365500000024} - Roma
-     * @param location {Location} Add location coordinates in {lat: number, lng: number } format
+     * location = {lat: 36.1699412, lon: -115.13982959999998} - Las Vegas
+     * location = {lat: 41.9027835, lon: 12.496365500000024} - Roma
+     * @param location {Location} Add location coordinates in {lat: number, lon: number } format
      */
     async getByLocation(location: Location) {
         const value = `lat=${location.lat}&lon=${location.lon}`;
