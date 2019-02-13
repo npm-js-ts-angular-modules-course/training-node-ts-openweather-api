@@ -12,7 +12,7 @@ API Openweather with basic request.
 ### Current Weather data.
 
 * By city name: Examples = ('Roma,it', 'Barcelona,es', 'Paris,fr', 'Bilbao,es' ,...)
-* By location: Example: {lat: 36.1699412, lng: -115.13982959999998} = Las Vegas
+* By location: Example: {lat: 36.1699412, lon: -115.13982959999998} = Las Vegas
 * By zip code: Example: 89104 - Las Vegas
 
 ### Forecast Weather data (Next 5 days in 3 hours period)
