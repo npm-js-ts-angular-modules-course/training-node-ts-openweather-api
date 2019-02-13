@@ -5,7 +5,7 @@ export declare class CitiesService {
     /**
      * Take cities list from constants
      */
-    list: import("../../../../../../../../../../Volumes/DATA/Udemy/Proyects/NPM Course/nodets/training-node-ts-openweather-api/lib/classes/interfaces/list.interface").ListData;
+    list: import("../interfaces/list.interface").ListData;
     /**
      * Take available cities list
      * @param json Return in JSON or no. Default "true"
