@@ -16,3 +16,4 @@ favicon.ico
 webpack.config.ts
 index.ts
 mugan86-openweather-api-*.tgz
+check.js

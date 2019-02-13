@@ -73,7 +73,7 @@ api.getCurrentWeather('zip', ['89104']).then(
     (err) => console.error(err) // Show error in console);
 );
 
-api.getCurrentWeather('location', [{lat: 36.1699412, lng: -115.13982959999998}]).then(
+api.getCurrentWeather('location', [{lat: 36.1699412, lon: -115.13982959999998}]).then(
     (data) => { 
         console.log('***************** LAS VEGAS *****************');
         console.log(data)
