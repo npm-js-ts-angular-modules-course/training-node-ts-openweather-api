@@ -263,7 +263,7 @@ getByCity(&amp;#39;Barcelona&amp;#39;) --&amp;gt; Find Barcelona (Spain)</code><
                                                     
 
                                                         <td>
-                                                                <code><p>Add location coordinates in {lat: number, lng: number } format</p>
+                                                                <code><p>Add location coordinates in {lat: number, lon: number } format</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -273,8 +273,8 @@ getByCity(&amp;#39;Barcelona&amp;#39;) --&amp;gt; Find Barcelona (Spain)</code><
                             <div>
                                     <b>Example :</b>
                                         <div>
-                                            <pre class="line-numbers"><code class="language-html">location = {lat: 36.1699412, lng: -115.13982959999998} - Las Vegas
-location = {lat: 41.9027835, lng: 12.496365500000024} - Roma</code></pre>
+                                            <pre class="line-numbers"><code class="language-html">location = {lat: 36.1699412, lon: -115.13982959999998} - Las Vegas
+location = {lat: 41.9027835, lon: 12.496365500000024} - Roma</code></pre>
                                         </div>
                             </div>
                             <div class="io-description">
@@ -443,9 +443,9 @@ export class CurrentService {
     /**
      * Take current weather data in select place to add coordinates
      * @example 
-     * location &#x3D; {lat: 36.1699412, lng: -115.13982959999998} - Las Vegas
-     * location &#x3D; {lat: 41.9027835, lng: 12.496365500000024} - Roma
-     * @param location {Location} Add location coordinates in {lat: number, lng: number } format
+     * location &#x3D; {lat: 36.1699412, lon: -115.13982959999998} - Las Vegas
+     * location &#x3D; {lat: 41.9027835, lon: 12.496365500000024} - Roma
+     * @param location {Location} Add location coordinates in {lat: number, lon: number } format
      */
     async getByLocation(location: Location) {
         const value &#x3D; &#x60;lat&#x3D;${location.lat}&amp;lon&#x3D;${location.lon}&#x60;;
